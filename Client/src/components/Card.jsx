@@ -20,15 +20,15 @@ export default function Card(props) {
          }
       });
 
-   }, []);
+   }, [myFavorites]);
 
    function handleFavorite(character){
-      if(isFav==false){
+      if(isFav===false){
          setIsFav(true)
-         dispatch(actions.addFavorite(character))
+         dispatch(actions.addFav(character))
       }else{
          setIsFav(false)
-         dispatch(actions.removeFavorite(character.id))
+         dispatch(actions.removeFav(character.id))
       }
    }
 

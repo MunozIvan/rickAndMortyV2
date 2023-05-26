@@ -5,13 +5,15 @@ const getCharDetail = require("./controllers/getCharDetail")
 const PORT = 3001;
 
 server.get("/rickandmorty/character/:id",(req,res)=>{
+    res.setHeader('Access-Control-Allow-Origin', '*');
     const {id} = req.params
     return getCharById(res,id)
 })
 
 server.get("/rickandmorty/detail/:id",(req,res)=>{
+    res.setHeader('Access-Control-Allow-Origin', '*');
     const {id} = req.params
-    return getCharById(res,id)
+    return getCharDetail(res,id)
 })
 
 server.listen(PORT, () => {
